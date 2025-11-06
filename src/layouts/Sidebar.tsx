@@ -5,7 +5,6 @@ import {
 	Clapperboard,
 	Clock,
 	Home,
-	Library,
 	ListVideo,
 	Repeat,
 	History,
@@ -21,27 +20,53 @@ import {
 	Mic,
 	Dice6,
 	Shirt,
+	TvMinimalPlay,
+	Download,
+	CircleUser,
 } from 'lucide-react';
 import { Children, useState, type ElementType, type ReactNode } from 'react';
 import { Button, buttonStyles } from '../components/Button';
 import { subscriptions } from '../data/sidebar';
 import { twMerge } from 'tailwind-merge';
+import { useSidebarContext } from '../contexts/SidebarContext';
+import { PageHeaderFirstSection } from './PageHeader';
 
 export function Sidebar() {
+	const { isLargeOpen, isSmallOpen, close } = useSidebarContext();
 	return (
 		<>
-			<aside className='sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 lg:hidden'>
+			<aside
+				className={`sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 ${
+					isLargeOpen ? 'lg:hidden' : 'lg:flex'
+				}`}>
 				<SmallSidebarItem Icon={Home} title='Home' url='/' />
 				<SmallSidebarItem Icon={Repeat} title='Shorts' url='/shorts' />
 				<SmallSidebarItem
-					Icon={Clapperboard}
+					Icon={TvMinimalPlay}
 					title='Subscriptions'
 					url='/subscriptions'
 				/>
-				<SmallSidebarItem Icon={Library} title='Library' url='/library' />
-				<SmallSidebarItem Icon={History} title='History' url='/history' />
+				<SmallSidebarItem
+					Icon={CirclePlay}
+					title='YouTube Music'
+					url='/music'
+				/>
+				<SmallSidebarItem Icon={CircleUser} title='You' url='/you' />
+				<SmallSidebarItem Icon={Download} title='Downloads' url='/downloads' />
 			</aside>
-			<aside className='w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 lg:flex hidden'>
+			{isSmallOpen && (
+				<div
+					onClick={close}
+					className='lg:hidden fixed inset-0 z-[999] bg-secondary-dark opacity-50'
+				/>
+			)}
+			<aside
+				className={`w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 ${
+					isLargeOpen ? 'lg:flex' : 'lg:hidden'
+				} ${isSmallOpen ? 'flex z-[999] bg-white max-h-screen' : 'hidden'}`}>
+				<div className='lg:hidden pt-2 pb-4 px-2 sticky top-0 bg-white'>
+					<PageHeaderFirstSection />
+				</div>
 				<LargeSidebarSection title='' visibleItemCount={4}>
 					<LargeSidebarItem isActive IconOrImgUrl={Home} title='Home' url='/' />
 					<LargeSidebarItem
@@ -50,7 +75,7 @@ export function Sidebar() {
 						url='/shorts'
 					/>
 					<LargeSidebarItem
-						IconOrImgUrl={Clapperboard}
+						IconOrImgUrl={TvMinimalPlay}
 						title='Subscriptions'
 						url='/subscriptions'
 					/>
@@ -175,7 +200,7 @@ function SmallSidebarItem({ Icon, title, url }: SmallSidebarItemProps) {
 				'py-4 px-1 flex flex-col items-center rounded-lg gap-1'
 			)}>
 			<Icon className='w-6 h-6' />
-			<div className='text-sm'>{title}</div>
+			<div className='text-xs'>{title}</div>
 		</a>
 	);
 }

@@ -4,11 +4,12 @@ import { Sidebar } from './layouts/Sidebar';
 import { CategoryPills } from './components/CategoryPills';
 import { categories, videos } from './data/home';
 import { VideoGridItem } from './components/VideoGridItem';
+import { SidebarProvider } from './contexts/SidebarContext';
 
 function App() {
 	const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 	return (
-		<>
+		<SidebarProvider>
 			<div className='max-h-screen flex flex-col'>
 				<PageHeader />
 				<div className='grid grid-cols-[auto_1fr] flex-grow overflow-auto'>
@@ -29,7 +30,7 @@ function App() {
 					</div>
 				</div>
 			</div>
-		</>
+		</SidebarProvider>
 	);
 }
 
