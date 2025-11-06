@@ -142,4 +142,68 @@ export const videos = [
 		videoUrl:
 			'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
 	},
+	{
+		id: '9',
+		title: 'TypeScript in 100 Seconds',
+		channel: {
+			name: 'Fireship',
+			id: 'Fireship',
+			profileUrl:
+				'https://yt3.googleusercontent.com/ytc/APkrFKb--NH6RwAGHYsD3KfxX-SAgWgIHrjR5E4Jb5SDSQ=s176-c-k-c0x00ffffff-no-rj',
+		},
+		views: 1074412,
+		postedAt: new Date('2020-11-25'),
+		duration: 105,
+		thumbnailUrl: 'https://img.youtube.com/vi/zQnBQ4tB3ZA/maxresdefault.jpg',
+		videoUrl:
+			'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+	},
+	{
+		id: '10',
+		title: 'Python Full Course for Beginners [2025]',
+		channel: {
+			name: 'Programming with Mosh',
+			id: 'programmingwithmosh',
+			profileUrl:
+				'https://yt3.googleusercontent.com/HCv0fXFEEcD0HRyF0_qR1K7b7qO3KCzmIoyH1DEJYB94CIUFhIE5i2t2IDIPX97W1-DK4hegww=s120-c-k-c0x00ffffff-no-rj',
+		},
+		views: 1074412,
+		postedAt: new Date('2020-11-25'),
+		duration: 7340,
+		thumbnailUrl: 'https://img.youtube.com/vi/K5KVEU3aaeQ/maxresdefault.jpg',
+		videoUrl:
+			'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+	},
+	{
+		id: '11',
+		title: '5 Things I Hate About JavaScript',
+		channel: {
+			name: 'ThePrimeagen',
+			id: 'ThePrimeagen',
+			profileUrl:
+				'https://yt3.googleusercontent.com/ytc/AIdro_laY82JAzs_2edBDxrxLgLWshhMK04SpAqOfoEzexOBZg=s72-c-k-c0x00ffffff-no-rj',
+		},
+		views: 284403,
+		postedAt: new Date('2022-08-04'),
+		duration: 432,
+		thumbnailUrl: 'https://img.youtube.com/vi/14jlIxVrcvo/maxresdefault.jpg',
+		videoUrl:
+			'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+	},
+	{
+		id: '12',
+		title: 'CSS attribute selectors are more powerful than you think',
+		channel: {
+			name: 'Kevin Powell',
+			id: 'KevinPowell',
+			profileUrl:
+				'https://yt3.ggpht.com/ytc/APkrFKa6XiLa13mMVPzkmmTBcgNPjjqCGPrY86KfJFmf5w=s48-c-k-c0x00ffffff-no-rj',
+		},
+		views: 7081,
+		postedAt: new Date('2025-11-05'),
+		duration: 664,
+		thumbnailUrl: 'https://img.youtube.com/vi/TWqpa-hfIdw/maxresdefault.jpg',
+		videoUrl:
+			'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+	},
 ];
